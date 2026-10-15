@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Live Brew, a free pour-over coffee ratio calculator">
+  <rect width="1200" height="630" fill="#174c3b"/>
+  <rect x="60" y="60" width="1080" height="510" rx="36" fill="none" stroke="#f8f4eb" stroke-opacity="0.35" stroke-width="3"/>
+  <g transform="translate(110 150) scale(14)" fill="none" stroke="#f8f4eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>
+    <path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H15.5"/>
+    <path d="M7.5 3.5c-.8 1 .8 1.6 0 2.8M11 3.5c-.8 1 .8 1.6 0 2.8"/>
+  </g>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#f8f4eb">
+    <text x="470" y="280" font-size="110" font-weight="700">Live Brew</text>
+    <text x="470" y="360" font-size="42">Free pour-over ratio calculator</text>
+    <text x="470" y="425" font-size="30" fill-opacity="0.8">Coffee, water, or finished mug. 1:14 to 1:18.</text>
+  </g>
+</svg>
