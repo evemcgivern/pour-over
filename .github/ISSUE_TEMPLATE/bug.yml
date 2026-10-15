@@ -1,0 +1,43 @@
+name: Bug or wrong number
+description: Something broke, looks wrong, or a calculation seems off
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues on GitHub are public. Please leave out personal details and your saved brew notes.
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      description: For example, iPhone 15 with Safari, or Pixel 8 with Chrome.
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Coffee amount
+        - Water amount
+        - Finished mug
+        - Not sure or not a calculation
+    validations:
+      required: true
+  - type: input
+    id: inputs
+    attributes:
+      label: What you entered
+      description: Amount, unit, and ratio. For example, 12 fl oz at 1 to 16.
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+    validations:
+      required: true

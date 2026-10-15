@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#174c3b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Live Brew">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23174c3b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z'/%3E%3Cpath d='M16 10.5h1.5a2.5 2.5 0 0 1 0 5H15.5'/%3E%3Cpath d='M7.5 3.5c-.8 1 .8 1.6 0 2.8M11 3.5c-.8 1 .8 1.6 0 2.8'/%3E%3C/svg%3E">
+  <title>Pour-Over Ratio Calculator: Coffee to Water | Live Brew</title>
+  <meta name="description" content="Free pour-over coffee ratio calculator. Enter coffee, brew water, or finished mug size and get the rest at 1:14 to 1:18. Works offline, no accounts.">
+  <meta name="author" content="Eve McGivern">
+  <link rel="canonical" href="https://evemcgivern.github.io/pour-over/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Live Brew">
+  <meta property="og:title" content="Pour-Over Ratio Calculator: Coffee to Water | Live Brew">
+  <meta property="og:description" content="Free pour-over coffee ratio calculator. Enter coffee, brew water, or finished mug size and get the rest at 1:14 to 1:18. Works offline, no accounts.">
+  <meta property="og:url" content="https://evemcgivern.github.io/pour-over/">
+  <meta property="og:image" content="https://evemcgivern.github.io/pour-over/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Live Brew: a free pour-over coffee ratio calculator, shown with a coffee cup icon on a green and cream background.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pour-Over Ratio Calculator: Coffee to Water | Live Brew">
+  <meta name="twitter:description" content="Free pour-over coffee ratio calculator. Enter coffee, brew water, or finished mug size and get the rest at 1:14 to 1:18. Works offline, no accounts.">
+  <meta name="twitter:image" content="https://evemcgivern.github.io/pour-over/og-image.png">
+  <meta name="twitter:image:alt" content="Live Brew: a free pour-over coffee ratio calculator, shown with a coffee cup icon on a green and cream background.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Live Brew",
+  "url": "https://evemcgivern.github.io/pour-over/",
+  "description": "Free pour-over coffee ratio calculator. Enter coffee, brew water, or finished mug size and get the rest at 1:14 to 1:18. Works offline, no accounts.",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Eve McGivern",
+    "sameAs": "https://github.com/evemcgivern"
+  },
+  "image": "https://evemcgivern.github.io/pour-over/og-image.png",
+  "featureList": [
+    "Enter coffee, brew-water, or finished-mug amount and get the other amounts",
+    "Choose a ratio from 1:14 to 1:18 (default 1:16)",
+    "Convert between g, oz, mL, and US fl oz",
+    "Finished-mug mode estimates water retained by grounds (about 2.1 g per g of coffee, from a UC Davis coffee-brewing study)",
+    "Taste-based adjustment tips",
+    "Opt-in brew history saved only in your browser (localStorage); no accounts, no analytics, no sync",
+    "Backup and restore as JSON",
+    "Copy or CSV export for Google Sheets",
+    "Installable as a home-screen app and works offline"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good starting coffee-to-water ratio for pour-over?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1:16, meaning 1 g of coffee to 16 g of water, is a common starting point and is the default in Live Brew. The calculator lets you choose any ratio from 1:14 to 1:18."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much coffee do I need for 500 g of water at 1:16?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 31 g of coffee. Divide the water by 16: 500 g / 16 = 31.25 g."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make my pour-over stronger or weaker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Change the ratio. Use a little less water per gram of coffee for a stronger cup, for example moving from 1:16 to 1:15. Use a little more water for a weaker cup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much water do coffee grounds keep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grounds retain about 2.1 g of water per gram of coffee, so a finished mug holds less than the brew water you pour. Live Brew uses this estimate in finished-mug mode; retention varies by coffee, grind, and brewer. Source: UC Davis coffee-brewing control chart study, https://doi.org/10.1111/1750-3841.16531."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My pour-over tastes sour or bitter. What should I change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it tastes sour or sharply bright, try a slightly finer grind to extract more. If it tastes bitter or drying, try a slightly coarser grind to extract less. Change one thing at a time."
+      }
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <a class="coffee-icon" href="https://buymeacoffee.com/a8w5iiqszp" target="_blank" rel="noopener noreferrer" aria-label="Buy me a coffee (opens another site in a new tab)" title="Buy me a coffee">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>
+          <path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H15.5"/>
+          <path d="M7.5 3.5c-.8 1 .8 1.6 0 2.8M11 3.5c-.8 1 .8 1.6 0 2.8"/>
+        </svg>
+      </a>
+      <p class="eyebrow">Live Brew · pour-over calculator</p>
+      <h1>Make the ratio easy.</h1>
+      <p class="intro-copy">Live Brew is a free pour-over ratio calculator: enter the coffee, brew-water, or finished mug amount you know and get the rest for your ratio.</p>
+    </header>
+
+    <section class="calculator" aria-label="Pour-over ratio calculator">
+      <fieldset>
+        <legend>Which amount do you know?</legend>
+        <div class="segmented">
+          <label class="choice"><input type="radio" name="known" value="water"><span>Water amount</span></label>
+          <label class="choice"><input type="radio" name="known" value="coffee"><span>Coffee amount</span></label>
+          <label class="choice"><input type="radio" name="known" value="cup" checked><span>Finished mug</span></label>
+        </div>
+      </fieldset>
+
+      <div class="block field-box">
+        <div class="amount-row">
+          <div>
+            <label for="amount" id="amount-label">Water amount to brew</label>
+            <input id="amount" type="number" inputmode="decimal" min="0.1" max="5000" step="any" value="12" required aria-describedby="amount-help">
+          </div>
+          <div>
+            <label for="input-unit" id="input-unit-label">Water unit</label>
+            <select id="input-unit"></select>
+          </div>
+        </div>
+        <p class="help" id="amount-help">Enter the finished drink capacity, not the water poured through the coffee. A scale measures weight; fluid ounces measure volume.</p>
+        <p class="error" id="amount-error" hidden></p>
+      </div>
+
+      <section class="block" aria-labelledby="concentration-title">
+        <fieldset>
+          <legend id="concentration-title">How concentrated do you like your cup?</legend>
+          <div class="segmented preference-grid">
+            <label class="choice preference-choice"><input type="radio" name="concentration" value="more"><span>More concentrated<small>1 : 15</small></span></label>
+            <label class="choice preference-choice"><input type="radio" name="concentration" value="balanced" checked><span>Balanced<small>1 : 16</small></span></label>
+            <label class="choice preference-choice"><input type="radio" name="concentration" value="less"><span>Less concentrated<small>1 : 17</small></span></label>
+          </div>
+          <p class="help">This chooses a starting ratio. Concentration affects strength; extraction and the coffee also shape flavor. Fine-tune the ratio below.</p>
+        </fieldset>
+        <details class="ratio-adjustment">
+          <summary>Choose an exact ratio</summary>
+          <fieldset class="block">
+            <legend>Coffee-to-water ratio</legend>
+            <div class="ratios">
+              <label class="choice"><input type="radio" name="ratio" value="14"><span>1 : 14</span></label>
+              <label class="choice"><input type="radio" name="ratio" value="15"><span>1 : 15</span></label>
+              <label class="choice"><input type="radio" name="ratio" value="16" checked><span>1 : 16</span></label>
+              <label class="choice"><input type="radio" name="ratio" value="17"><span>1 : 17</span></label>
+              <label class="choice"><input type="radio" name="ratio" value="18"><span>1 : 18</span></label>
+            </div>
+          </fieldset>
+        </details>
+      </section>
+
+      <div class="block field-box">
+        <label for="output-unit" id="output-unit-label">Show the calculated amount in</label>
+        <select id="output-unit"></select>
+        <div class="answer">
+          <p class="answer-label" id="result-label">Coffee to weigh</p>
+          <output id="result-value" aria-live="off" aria-labelledby="result-label" aria-describedby="formula ratio-summary">14.8 g</output>
+          <p class="answer-label" id="secondary-label" hidden>Brew water to pour</p>
+          <output id="secondary-value" hidden aria-live="off" aria-labelledby="secondary-label"></output>
+          <p class="formula" id="formula">237 g water ÷ 16 ≈ 14.8 g coffee</p>
+        </div>
+        <p class="ratio-summary" id="ratio-summary">Coffee : water = 1 : 16</p>
+        <p class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <section class="block field-box" aria-labelledby="check-in-title">
+        <h2 id="check-in-title" class="section-label">Taste check-in</h2>
+        <label for="taste-result">What did this cup taste like?</label>
+        <select id="taste-result" aria-describedby="taste-help">
+          <option value="">Choose a taste</option>
+          <option value="weak">Weak or watery</option>
+          <option value="sour">Sour or sharply bright</option>
+          <option value="bitter">Bitter or drying</option>
+          <option value="chocolate">More chocolatey after adding water</option>
+          <option value="good">Just right</option>
+        </select>
+        <div class="taste-guidance"><p id="taste-guidance" role="status" aria-live="polite" aria-atomic="true">Choose a taste to see one specific starting suggestion.</p></div>
+        <label for="brew-note">Optional brew note</label>
+        <textarea id="brew-note" rows="3" maxlength="2000" placeholder="Coffee, recipe, and what you noticed…" aria-describedby="taste-help"></textarea>
+        <p class="help" id="taste-help">Taste choices show fixed tips; the note is saved only in this browser on this device.</p>
+        <button class="save-button" id="save-brew" type="button">Save brew to history</button>
+        <p class="help">Saved brews stay on this device. Nothing is sent anywhere unless you choose to copy or download them.</p>
+        <p class="sr-only" id="note-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+
+      <section class="block field-box" aria-labelledby="history-title">
+        <div class="history-header">
+          <h2 id="history-title" class="section-label">Your brew history</h2>
+          <button class="clear-history" id="clear-history" type="button" hidden>Clear history</button>
+        </div>
+        <p class="empty-history" id="empty-history">Saved recipes and taste notes will appear here.</p>
+        <ul class="history-list" id="history-list"></ul>
+        <div class="undo-bar" id="undo-bar" hidden>
+          <p>Brew deleted.</p>
+          <button class="tool-button" id="undo-delete" type="button">Undo</button>
+        </div>
+        <p class="help" id="history-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <details class="backup-box">
+          <summary>Back up or restore</summary>
+          <p class="help">Your brews live only in this browser. Download a backup file to keep a copy or move to another device. Restoring adds brews; it never replaces or deletes what you have.</p>
+          <button class="tool-button" id="export-history" type="button" hidden>Download backup (.json)</button>
+          <button class="tool-button" id="import-history" type="button">Restore from file…</button>
+          <p class="help" id="sheets-help" hidden>For spreadsheets, not backup: keep the .json backup too. Open Google Sheets, tap a cell, paste. Copying places your brews on the clipboard, which other apps on your device may read.</p>
+          <button class="tool-button" id="copy-sheets" type="button" hidden>Copy for Google Sheets</button>
+          <button class="tool-button" id="download-csv" type="button" hidden>Download spreadsheet (.csv)</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </details>
+      </section>
+
+      <aside class="insight" aria-labelledby="taste-note-title">
+        <p id="taste-note-title"><strong>How the numbers work</strong></p>
+        <p class="hint">The finished-mug calculation estimates that coffee grounds retain about 2.1 g water per gram of coffee. For a 12 US fl oz mug at 1 : 16, that is about 25.5 g coffee and 408 g (13.8 US fl oz) brew water. Retention varies by coffee, grind, and brewer, so treat this as a starting estimate. <a href="https://doi.org/10.1111/1750-3841.16531">Source: coffee brewing control chart study</a>.</p>
+        <details>
+          <summary>How taste can guide adjustments</summary>
+          <p>Ratio changes cup strength and can also affect extraction. Grind and pouring affect extraction too.</p>
+          <ul>
+            <li><strong>Weak or watery:</strong> use a little less water per gram of coffee. For example, move from 1 : 16 to 1 : 15.</li>
+            <li><strong>Sour or sharply bright:</strong> try a slightly finer grind to extract more.</li>
+            <li><strong>Bitter or drying:</strong> try a slightly coarser grind to extract less.</li>
+          </ul>
+          <p class="hint">Change one thing at a time. The study found sour, fruitier notes were strongest at high strength with lower extraction; bitterness and astringency at high strength with higher extraction. These are tendencies, not guaranteed outcomes.</p>
+          <p class="hint">Based on <a href="https://doi.org/10.1111/1750-3841.16531">UC Davis drip-coffee sensory research</a>; your coffee and brewer may differ.</p>
+        </details>
+      </aside>
+    </section>
+
+    <section class="block field-box faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section-label">Pour-over ratio basics</h2>
+      <h3>What is a good starting coffee-to-water ratio for pour-over?</h3>
+      <p>1:16, meaning 1 g of coffee to 16 g of water, is a common starting point and is the default in Live Brew. The calculator lets you choose any ratio from 1:14 to 1:18.</p>
+      <h3>How much coffee do I need for 500 g of water at 1:16?</h3>
+      <p>About 31 g of coffee. Divide the water by 16: 500 g / 16 = 31.25 g.</p>
+      <h3>How do I make my pour-over stronger or weaker?</h3>
+      <p>Change the ratio. Use a little less water per gram of coffee for a stronger cup, for example moving from 1:16 to 1:15. Use a little more water for a weaker cup.</p>
+      <h3>How much water do coffee grounds keep?</h3>
+      <p>Grounds retain about 2.1 g of water per gram of coffee, so a finished mug holds less than the brew water you pour. Live Brew uses this estimate in finished-mug mode; retention varies by coffee, grind, and brewer. Source: UC Davis coffee-brewing control chart study, <a href="https://doi.org/10.1111/1750-3841.16531">https://doi.org/10.1111/1750-3841.16531</a>.</p>
+      <h3>My pour-over tastes sour or bitter. What should I change?</h3>
+      <p>If it tastes sour or sharply bright, try a slightly finer grind to extract more. If it tastes bitter or drying, try a slightly coarser grind to extract less. Change one thing at a time.</p>
+    </section>
+
+    <details class="backup-box install-box" id="install-box">
+      <summary>Add to your home screen</summary>
+      <p class="help">Open this calculator like an app, even offline in the kitchen.</p>
+      <button class="tool-button" id="install-app" type="button" hidden>Install app</button>
+      <ul class="help install-steps">
+        <li><strong>iPhone or iPad (Safari):</strong> tap the Share button, then Add to Home Screen.</li>
+        <li><strong>Android (Chrome):</strong> tap the ⋮ menu, then Install app or Add to Home screen.</li>
+      </ul>
+      <p class="help">On iPhone, the home-screen copy keeps its own saved brews, separate from Safari. Download a backup first, then restore it in the app.</p>
+    </details>
+
+    <p class="footer">A free pour-over ratio calculator. Nothing syncs or sends: your saved brews and note stay in this browser on this device, so use “Back up or restore” to keep a copy.</p>
+    <p class="footer">
+      <a class="coffee-link" href="https://github.com/evemcgivern/pour-over/issues/new/choose" target="_blank" rel="noopener noreferrer">Suggestions or enhancements? File an issue on GitHub.</a><br>
+      Needs a free GitHub account. GitHub issues are public, so leave out personal details.
+    </p>
+    <p class="footer">
+      <a class="coffee-link" href="https://buymeacoffee.com/a8w5iiqszp" target="_blank" rel="noopener noreferrer">Enjoying this? Buy me a coffee</a><br>
+      These links open other sites (GitHub, Buy Me a Coffee) in a new tab. This page adds no tracking.
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

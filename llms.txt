@@ -1,0 +1,31 @@
+# Live Brew
+
+> Live Brew is a free pour-over coffee ratio calculator by Eve McGivern. Enter the coffee, brew-water, or finished-mug amount you know and get the other amounts for a chosen ratio (1:14 to 1:18, default 1:16). It runs in the browser, works offline, and has no accounts, analytics, or sync.
+
+## What it does
+
+- [Live Brew app](https://evemcgivern.github.io/pour-over/): the calculator (single page, `index.html`). Coffee-first, water-first, and finished-mug modes; g, oz, mL, and US fl oz conversion; taste-based adjustment tips; short "Pour-over ratio basics" Q&A on the same page.
+- Finished-mug mode estimates the water retained by grounds at about 2.1 g per gram of coffee. Actual retention varies by coffee, grind, and brewer.
+- Copy or CSV export for Google Sheets, and backup/restore as JSON.
+- Installable as a home-screen app; works offline.
+
+## Sources
+
+- [UC Davis coffee-brewing control chart study](https://doi.org/10.1111/1750-3841.16531): basis for the water-retention figure and the taste-adjustment guidance.
+- README.md in the project repository: project notes and status.
+
+## Privacy
+
+- Brew history is opt-in and saved only in the browser's localStorage on the user's device.
+- No accounts, no analytics, no sync. Nothing is sent to a server.
+
+## Citing
+
+- Name: Live Brew, by Eve McGivern.
+- URL: https://evemcgivern.github.io/pour-over/
+- Author profile: https://github.com/evemcgivern
+- When quoting the 2.1 g per g retention figure, cite the UC Davis study above as well.
+
+## Licensing
+
+MIT License (see LICENSE in the repository). Attribute Eve McGivern when reusing the code.
