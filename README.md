@@ -26,7 +26,7 @@ A free pour-over ratio calculator. Static site, no build, no accounts, no analyt
 - **Content Security Policy** (meta tag in `index.html`): scripts and styles only from this site, no third-party code, no network calls except to this site, no inline code, no forms, no `<base>`. `no-referrer` is set, and outbound links use `noopener noreferrer`.
 - **Data stays on the device.** The only storage is the browser's localStorage. Copy and download happen only when a user taps the button. Imported files are size-limited (1 MB) and every field is validated; text is rendered with `textContent`, never as HTML. Spreadsheet exports neutralize cells that start with `= + - @`.
 - **Limits of GitHub Pages:** it cannot send HTTP headers, so `frame-ancestors` (clickjacking protection) and HSTS are not set by this repo. GitHub serves HTTPS and HSTS for `github.io` itself.
-- **Repo rules:** the default branch is protected: changes arrive by pull request only, with no direct pushes, force-pushes, or deletion. Pages enforces HTTPS. Secret scanning, push protection, and private vulnerability reporting are on. Keep third-party scripts out; if one is ever needed, update the CSP deliberately.
+- **Repo rules:** the default branch is protected: changes arrive by pull request only, with no direct pushes, force-pushes, or deletion. Only squash merges are allowed. Pages enforces HTTPS, and secret scanning, push protection, and private vulnerability reporting are turned on when the repo goes public. Keep third-party scripts out; if one is ever needed, update the CSP deliberately.
 
 ## Maintenance
 - Any change to a cached file: bump `CACHE` in `sw.js` (now `live-brew-v4`), or installed copies keep the old version.
